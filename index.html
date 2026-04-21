@@ -14,15 +14,17 @@
     
     .gallery {
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
+      gap: 6px;
+      justify-content: center;
+      padding: 10px 0;
     }
 
     .card {
       position: relative;
-      display: flex;
-      width: 240px;
-      height: 780px;
+      display: block;
+      width: 150px;
+      height: 480px;
       overflow: hidden;
       border-radius: 18px;
       text-decoration: none;
@@ -39,7 +41,7 @@
       height: 100%;
       object-fit: contain;
       object-position: center;
-      transition: transform 0.45s ease, opacity 0.45s ease, filter 0.45s ease;
+      transition: transform 0.35s ease, opacity 0.35s ease, filter 0.35s ease;
       display: block;
     }
 
@@ -51,7 +53,7 @@
     .related-image {
       z-index: 2;
       opacity: 0;
-      transform: scale(1.03);
+      transform: scale(1.01);
       pointer-events: none;
     }
 
@@ -81,7 +83,7 @@
     }
 
     .card:hover .base-image {
-      transform: scale(1.04);
+      transform: scale(1.02);
       filter: brightness(0.82);
     }
 
