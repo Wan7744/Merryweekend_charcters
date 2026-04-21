@@ -1,39 +1,26 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Notion Personal Wiki Gallery</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery Test</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       padding: 24px;
       background: transparent;
-      font-family: Pretendard, Arial, sans-serif;
-    }
-
-    .gallery {
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(220px, 1fr));
-      gap: 20px;
+      font-family: Arial, sans-serif;
     }
 
     .card {
       position: relative;
       display: block;
-      width: 100%;
+      width: 260px;
       aspect-ratio: 2 / 3;
       overflow: hidden;
       border-radius: 18px;
       text-decoration: none;
-      background: #111;
+      background: #222;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
       isolation: isolate;
     }
@@ -44,11 +31,9 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition:
-        transform 0.45s ease,
-        opacity 0.45s ease,
-        filter 0.45s ease;
+      object-fit: contain;
+      object-position: center;
+      transition: transform 0.45s ease, opacity 0.45s ease, filter 0.45s ease;
       display: block;
     }
 
@@ -60,7 +45,7 @@
     .related-image {
       z-index: 2;
       opacity: 0;
-      transform: scale(1.06);
+      transform: scale(1.03);
       pointer-events: none;
     }
 
@@ -68,14 +53,13 @@
       position: absolute;
       inset: 0;
       z-index: 3;
-      background:
-        linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.55) 0%,
-          rgba(0, 0, 0, 0.18) 35%,
-          rgba(0, 0, 0, 0.05) 60%,
-          rgba(0, 0, 0, 0.0) 100%
-        );
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.55) 0%,
+        rgba(0, 0, 0, 0.18) 35%,
+        rgba(0, 0, 0, 0.05) 60%,
+        rgba(0, 0, 0, 0) 100%
+      );
       pointer-events: none;
     }
 
@@ -87,87 +71,34 @@
       color: white;
       font-size: 16px;
       font-weight: 700;
-      letter-spacing: -0.02em;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
-      opacity: 0.95;
-      transition: transform 0.45s ease, opacity 0.45s ease;
     }
 
     .card:hover .base-image {
-      transform: scale(1.06);
-      filter: brightness(0.88);
+      transform: scale(1.04);
+      filter: brightness(0.82);
     }
 
     .card:hover .related-image {
       opacity: 1;
       transform: scale(1);
     }
-
-    .card:hover .label {
-      transform: translateY(-2px);
-      opacity: 1;
-    }
-
-    .card:focus-visible {
-      outline: 3px solid rgba(120, 180, 255, 0.9);
-      outline-offset: 4px;
-    }
-
-    @media (max-width: 640px) {
-      body {
-        padding: 14px;
-      }
-
-      .gallery {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-    }
   </style>
 </head>
 <body>
-  <div class="gallery">
-    <a class="card" href="https://www.notion.so/Bacterio-Tower-3393e1b63aa780fe97ecd6416392b4ed?source=copy_link" target="_blank" rel="noopener noreferrer">
-      <img class="base-image" src="main/무제1107_20260421123122.png" alt="이미지 1" />
-      <img class="related-image" src="YOUR_RELATED_IMAGE_1" alt="관련 이미지 1" />
-      <div class="overlay"></div>
-      <div class="label">문서 1</div>
-    </a>
-
-    <a class="card" href="YOUR_NOTION_PAGE_LINK_2" target="_blank" rel="noopener noreferrer">
-      <img class="base-image" src="YOUR_MAIN_IMAGE_2" alt="이미지 2" />
-      <img class="related-image" src="YOUR_RELATED_IMAGE_2" alt="관련 이미지 2" />
-      <div class="overlay"></div>
-      <div class="label">문서 2</div>
-    </a>
-
-    <a class="card" href="YOUR_NOTION_PAGE_LINK_3" target="_blank" rel="noopener noreferrer">
-      <img class="base-image" src="YOUR_MAIN_IMAGE_3" alt="이미지 3" />
-      <img class="related-image" src="YOUR_RELATED_IMAGE_3" alt="관련 이미지 3" />
-      <div class="overlay"></div>
-      <div class="label">문서 3</div>
-    </a>
-
-    <a class="card" href="YOUR_NOTION_PAGE_LINK_4" target="_blank" rel="noopener noreferrer">
-      <img class="base-image" src="YOUR_MAIN_IMAGE_4" alt="이미지 4" />
-      <img class="related-image" src="YOUR_RELATED_IMAGE_4" alt="관련 이미지 4" />
-      <div class="overlay"></div>
-      <div class="label">문서 4</div>
-    </a>
-
-    <a class="card" href="YOUR_NOTION_PAGE_LINK_5" target="_blank" rel="noopener noreferrer">
-      <img class="base-image" src="YOUR_MAIN_IMAGE_5" alt="이미지 5" />
-      <img class="related-image" src="YOUR_RELATED_IMAGE_5" alt="관련 이미지 5" />
-      <div class="overlay"></div>
-      <div class="label">문서 5</div>
-    </a>
-
-    <a class="card" href="YOUR_NOTION_PAGE_LINK_6" target="_blank" rel="noopener noreferrer">
-      <img class="base-image" src="YOUR_MAIN_IMAGE_6" alt="이미지 6" />
-      <img class="related-image" src="YOUR_RELATED_IMAGE_6" alt="관련 이미지 6" />
-      <div class="overlay"></div>
-      <div class="label">문서 6</div>
-    </a>
-  </div>
+  <a class="card" href="https://www.notion.so/Bacterio-Tower-3393e1b63aa780fe97ecd6416392b4ed?source=copy_link" target="_blank" rel="noopener noreferrer">
+    <img
+      class="base-image"
+      src="https://raw.githubusercontent.com/Wan7744/Merryweekend_charcters/1b01d0bcb9319ee90a332212bb8d772b837f2dd4/main/dummy.png"
+      alt="기본 이미지"
+    >
+    <img
+      class="related-image"
+      src="https://raw.githubusercontent.com/Wan7744/Merryweekend_charcters/49d21d8cf0ee2e056d1aef60e62717a71af5128a/relate/dummy_relate.png"
+      alt="관련 이미지"
+    >
+    <div class="overlay"></div>
+    <div class="label">문서 1</div>
+  </a>
 </body>
 </html>
